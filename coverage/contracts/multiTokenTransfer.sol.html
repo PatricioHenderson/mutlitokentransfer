@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/multiTokenTransfer.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> multiTokenTransfer.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.56% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/16</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity &gt;=0.8.2 &lt;0.9.0;
+&nbsp;
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
+import "./receiveEther.sol";
+&nbsp;
+/**
+ * @title MultiTokenTransfer
+ * @dev Transfer tokens based on merkle proof
+ * @author Patricio Henderson
+ */
+&nbsp;
+contract MultiTokenTransfer is Ownable, ReceiveEther {
+    bytes32 private root;
+    uint256 public maxTransfers;
+    mapping(address =&gt; bool) public submittedProofs;
+    mapping(address =&gt; mapping(bytes32 =&gt; bool)) public submittedTransactions;
+    
+&nbsp;
+    /**
+     * @dev Constructor function
+     * @param _root  The merkle root hash
+     */
+    constructor(bytes32 _root) {
+        root = _root;
+    }
+&nbsp;
+    /**
+    * @dev Store and set max batch of transactions to be handled
+    * @param _maxTransfers value to store
+    */
+    function setMaxTransfers(uint256 _maxTransfers) public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {
+        maxTransfers = _maxTransfers;
+    }
+&nbsp;
+    /**
+     * @dev Set max number of transactions can be done in one operation
+     * @param _transfers numeber of transactions to be configured
+     */
+    modifier maxTransfersAllowed(uint256 _transfers){
+        <span class="missing-if-branch" title="else path not taken" >E</span>require (_transfers &lt;= maxTransfers, "Number of transfers exceeds maximum allowed");
+        _;
+    }
+&nbsp;
+    /**
+    * @dev Return value of max transfers allowed 
+    * @return value of max transfers
+    */
+    function retrieveMaxTransfers() public view returns (uint256) {
+        return maxTransfers;
+    }
+&nbsp;
+    /**
+    * @dev Submits multiple Merkle proofs of token amounts assigned to different addresses.
+    * @param _proof Array of Merkle proofs.
+    * @param _addr Array of recipient addresses.
+    * @param _amount Array of amounts to be transferred to each recipient.
+    */
+    function submitProofs (bytes32[] memory _proof, address[] memory _addr, uint256[] memory _amount) public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {
+        for (uint256 i = 0; i &lt; _addr.length; i++) {
+            bytes32[] memory proofArray = new bytes32[](1);
+            proofArray[0] = _proof[i];
+            verify(proofArray, _addr[i], _amount[i]);
+        }
+    }
+&nbsp;
+    /**
+    * @dev Verifies a Merkle proof for a given address and amount.
+    * @param _proof Array containing the Merkle proof.
+    * @param _addr Recipient address.
+    * @param _amount Amount to be transferred to the recipient.
+    */
+    function verify( bytes32[] memory _proof, address _addr, uint256 _amount) private  {
+        bytes32 leaf = keccak256(abi.encodePacked(keccak256(abi.encode(_addr, _amount))));
+        require(MerkleProof.verify(_proof , root , leaf), "Merkle proof verification failed");
+        submittedProofs[_addr] = true;
+    }
+&nbsp;
+&nbsp;
+    /**
+    * @dev Transfers tokens to multiple recipients, after verifying that a proof has been submitted for each transaction.
+    * @param _token ERC20 token contract instance.
+    * @param _recipients Array of recipient addresses.
+    * @param _amounts Array of amounts to be transferred to each recipient.
+    */
+    function transferTokens(IERC20 _token,
+    address[] memory _recipients,
+    uint256[] memory _amounts
+    )
+     public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner payable 
+    <span class="missing-if-branch" title="else path not taken" >E</span>maxTransfersAllowed(_amounts.length) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_recipients.length == _amounts.length, "Invalid input length");
+&nbsp;
+        for (uint256 i = 0; i &lt; _recipients.length; i++) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(submittedProofs[_recipients[i]], "No proof submitted");
+&nbsp;
+            // Transfer tokens to each recipient
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(_token.transfer(_recipients[i], _amounts[i]), "Token transfer failed");
+        }
+    }
+    }</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 20 2023 07:31:22 GMT-0600 (Central Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
